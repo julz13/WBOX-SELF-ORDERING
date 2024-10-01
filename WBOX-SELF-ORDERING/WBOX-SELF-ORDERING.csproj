@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E284D5FD-50B6-4FC6-93E1-96ED53BC8DAE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WBOX_SELF_ORDERING</RootNamespace>
+    <AssemblyName>WBOX-SELF-ORDERING</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KenRJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\kenRJCode.RJControls.1.0.0\lib\net472\KenRJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\mysql reference\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RJCodeAdvance.RJControl2s.1.0.0\lib\net472\RJCodeAdance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDineLoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDineLoc.Designer.cs">
+      <DependentUpon>FrmDineLoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLandingPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLandingPage.Designer.cs">
+      <DependentUpon>FrmLandingPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLicense.Designer.cs">
+      <DependentUpon>FrmLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainMenu.Designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPayment.Designer.cs">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThankYou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThankYou.Designer.cs">
+      <DependentUpon>FrmThankYou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\EntityConversion.cs" />
+    <Compile Include="Helpers\SettingsWriter.cs" />
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\GlobalVar.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Cipher.cs" />
+    <Compile Include="Security\GZipper.cs" />
+    <Compile Include="Security\Xor.cs" />
+    <Compile Include="User Control\FrmClearAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Control\FrmClearAll.Designer.cs">
+      <DependentUpon>FrmClearAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\FrmClearItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Control\FrmClearItem.Designer.cs">
+      <DependentUpon>FrmClearItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\FrmNoItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Control\FrmNoItem.Designer.cs">
+      <DependentUpon>FrmNoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\FrmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Control\FrmOrderList.Designer.cs">
+      <DependentUpon>FrmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucBackBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucBackBtn.Designer.cs">
+      <DependentUpon>ucBackBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucCategory.Designer.cs">
+      <DependentUpon>ucCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucClearBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucClearBtn.Designer.cs">
+      <DependentUpon>ucClearBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucDineIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucDineIn.Designer.cs">
+      <DependentUpon>ucDineIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucItem.Designer.cs">
+      <DependentUpon>ucItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucLogo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucLogo.Designer.cs">
+      <DependentUpon>ucLogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucOnlinePayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucOnlinePayment.Designer.cs">
+      <DependentUpon>ucOnlinePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucOverTheCounter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucOverTheCounter.Designer.cs">
+      <DependentUpon>ucOverTheCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucProceedBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucProceedBtn.Designer.cs">
+      <DependentUpon>ucProceedBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucTakeOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucTakeOut.Designer.cs">
+      <DependentUpon>ucTakeOut.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDineLoc.resx">
+      <DependentUpon>FrmDineLoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLandingPage.resx">
+      <DependentUpon>FrmLandingPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLicense.resx">
+      <DependentUpon>FrmLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPayment.resx">
+      <DependentUpon>FrmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThankYou.resx">
+      <DependentUpon>FrmThankYou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="User Control\FrmClearAll.resx">
+      <DependentUpon>FrmClearAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\FrmClearItem.resx">
+      <DependentUpon>FrmClearItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\FrmNoItem.resx">
+      <DependentUpon>FrmNoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\FrmOrderList.resx">
+      <DependentUpon>FrmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucBackBtn.resx">
+      <DependentUpon>ucBackBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucCategory.resx">
+      <DependentUpon>ucCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucClearBtn.resx">
+      <DependentUpon>ucClearBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucDineIn.resx">
+      <DependentUpon>ucDineIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucItem.resx">
+      <DependentUpon>ucItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucLogo.resx">
+      <DependentUpon>ucLogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucOnlinePayment.resx">
+      <DependentUpon>ucOnlinePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucOverTheCounter.resx">
+      <DependentUpon>ucOverTheCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucProceedBtn.resx">
+      <DependentUpon>ucProceedBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucTakeOut.resx">
+      <DependentUpon>ucTakeOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screen Shot 2023-05-03 at 03.54.12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pxfuel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coffee_Bean_&amp;_Tea_Leaf_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_arrow_5821.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TakeOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DineIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftarrow_80844.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cheeseburger-bacon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1087097.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3492385.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\counter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblemimportant_93499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vcslocallymodifiedunstaged_93505.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thefreeforty_receipt_icon-icons.com_66313.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoppingcart_80945.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm_alert_internet_light_security_siren_warning_icon_127093.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\take_away_food_cup_paper_bag_drink_coffee_icon_210212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant_tablecloth_cutlery_spoon_fork_icon_196752.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486348526-arrow-back-backwards-repeat-previous_80453.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\counter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\processed-a0ab5cd9-38bb-4f4b-8504-6acb74421792_E7ds3hMW.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
